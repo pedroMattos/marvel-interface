@@ -13,7 +13,7 @@ export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false)
   const handleClickShowPassword = () => setShowPassword((show) => !show)
   const navigate = useNavigate()
-  const handleClick = () => navigate('/select-character')
+  const handleClick = () => navigate('/select-agent')
   return (
     <FormContainer>
       <FormTitle $highLightText=".">Bem-vindo</FormTitle>
