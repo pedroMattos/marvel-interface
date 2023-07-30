@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import LoginPage from './views/LoginPage';
 import RecoverPage from './views/RecoverPage';
+import GoBackToLoginPage from './views/GoBackToLoginPage';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,14 @@ const router = createBrowserRouter([
     element: (
     <React.StrictMode>
       <RecoverPage />
+    </React.StrictMode>
+    ),
+  },
+  {
+    path: "/back-to-login",
+    element: (
+    <React.StrictMode>
+      <GoBackToLoginPage />
     </React.StrictMode>
     ),
   },
