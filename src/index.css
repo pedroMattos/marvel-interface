@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+.MuiPaper-root {
+  height: 400px;
+  margin-top: 10px;
+  width: 310px;
+}
+
 :root {
   --white: #FFFFFF;
   --black: #000000;
@@ -26,7 +32,9 @@ code {
   --gray-background: #F5F6F8;
   --gray-100: #EAECF0;
   --gray-150: #FBFBFB;
+  --gray-300: #D0D5DD;
   --gray-400: #B7B7B7;
   --gray-500: #777777;
+  --gray-900: #101828;
   --border-radius: 28px;
 }
