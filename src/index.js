@@ -9,6 +9,7 @@ import {
 import LoginPage from './views/LoginPage';
 import RecoverPage from './views/RecoverPage';
 import GoBackToLoginPage from './views/GoBackToLoginPage';
+import SelecAgent from './views/SelectAgentPage';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,14 @@ const router = createBrowserRouter([
     element: (
     <React.StrictMode>
       <GoBackToLoginPage />
+    </React.StrictMode>
+    ),
+  },
+  {
+    path: "/select-agent",
+    element: (
+    <React.StrictMode>
+      <SelecAgent />
     </React.StrictMode>
     ),
   },
