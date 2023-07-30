@@ -24,7 +24,7 @@ export default function LoginForm() {
         {showPassword ? <VisibilityOff /> : <Visibility />}
       </IconButton>
       } />
-      <FormSubmitButton />
+      <FormSubmitButton hasIcon text={'entrar'} />
       <Actions>
         <HelpRecover />
       </Actions>
