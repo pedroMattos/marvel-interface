@@ -7,6 +7,7 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import LoginPage from './views/LoginPage';
+import RecoverPage from './views/RecoverPage';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,14 @@ const router = createBrowserRouter([
     element: (
     <React.StrictMode>
       <LoginPage />
+    </React.StrictMode>
+    ),
+  },
+  {
+    path: "/recover-account",
+    element: (
+    <React.StrictMode>
+      <RecoverPage />
     </React.StrictMode>
     ),
   },
