@@ -10,13 +10,14 @@ import LoginPage from './views/LoginPage';
 import RecoverPage from './views/RecoverPage';
 import GoBackToLoginPage from './views/GoBackToLoginPage';
 import SelecAgent from './views/SelectAgentPage';
+import HomePage from './views/HomePage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
     <React.StrictMode>
-      <App />
+      <HomePage />
     </React.StrictMode>
     ),
   },
