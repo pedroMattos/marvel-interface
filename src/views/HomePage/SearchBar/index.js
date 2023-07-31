@@ -1,8 +1,8 @@
 import SearchField from "../../../components/FormFields/SearchField";
 import SearchIcon from "@mui/icons-material/Search"
 
-export default function SearchBar() {
+export default function SearchBar({ onChange }) {
   return (
-    <SearchField startAdornment={<SearchIcon />} />
+    <SearchField onChange={onChange} startAdornment={<SearchIcon />} />
   )
 }

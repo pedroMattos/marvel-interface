@@ -1,20 +1,32 @@
 import { useEffect, useState } from "react";
 import getAllCharacters from "../../../../services/getAllCharacters";
+import debounce from "lodash.debounce";
 const PER_PAGE = 10
 export default function useAgentData() {
   const [agents, setAgents] = useState(null)
   const [totalItems, setTotalItems] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
+  const [pageOffset, setPageOffset] = useState(1)
 
   const handlePageChange = (event, page) => {
-    console.log(event.target.textContent, page)
     const offset = (page - 1) * PER_PAGE
     reFetchAgents(offset)
     setIsLoading(true)
   }
 
-  const reFetchAgents = async (offset) => {
-    const { results, total } = await getAllCharacters(offset)
+  const handleSearch = (event) => {
+    const isNotEmpty = !!event.target.value.trim()
+    const searchTerm = event.target.value
+    const startSearch = debounce(() => {
+      if (isNotEmpty) reFetchAgents(pageOffset, searchTerm)
+    }, 1000)
+
+    startSearch()
+  }
+
+  const reFetchAgents = async (offset, searchTerm) => {
+    const { results, total } = await getAllCharacters(offset, searchTerm)
+    setPageOffset(offset)
     setAgents(results)
     setTotalItems(total)
     setIsLoading(false)
@@ -31,5 +43,5 @@ export default function useAgentData() {
     fetchAgents()
   }, [])
 
-  return { isLoading, agents, totalItems, handlePageChange }
+  return { isLoading, agents, totalItems, handlePageChange, handleSearch }
 }
