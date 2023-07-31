@@ -7,7 +7,7 @@ async function getAllCharacters() {
   const timestamp = new Date().getTime()
   const md5Hash = md5(timestamp + privateKey + publicKey)
   const { data } = await axios
-    .get(`http://gateway.marvel.com/v1/public/characters?limit=20&ts=${timestamp}&apikey=${publicKey}&hash=${md5Hash}`)
+    .get(`http://gateway.marvel.com/v1/public/characters?limit=10&ts=${timestamp}&apikey=${publicKey}&hash=${md5Hash}`)
 
   return data.data.results
 }
