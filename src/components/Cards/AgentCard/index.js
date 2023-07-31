@@ -1,7 +1,6 @@
 import { CardInfo, CardInfoArea, CardInfoTitle, CardThumb, CardWrapper } from "./AgentCard.styles";
 
 export default function AgentCard({ agentData }) {
-  console.log(agentData)
   return (
     <CardWrapper>
       <CardThumb>
@@ -9,7 +8,7 @@ export default function AgentCard({ agentData }) {
       </CardThumb>
       <CardInfoArea>
         <CardInfoTitle>{agentData.name}</CardInfoTitle>
-        <CardInfo>p</CardInfo>
+        <CardInfo>{agentData.description}</CardInfo>
       </CardInfoArea>
     </CardWrapper>
   )

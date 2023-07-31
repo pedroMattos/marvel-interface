@@ -4,9 +4,9 @@ export const CardWrapper = styled.div`
   display: flex;
   gap: 15px;
   background-color: var(--gray-100);
-  min-width: 238px;
+  width: 238px;
   height: 150px;
-  max-width: 100%;
+  max-width: 526px;
   flex: 1;
   border-radius: 15px;
   `
@@ -15,10 +15,10 @@ export const CardThumb = styled.figure`
   margin: 14px 0 17px 10px;
   border-radius: 10px;
   overflow: hidden;
-  width: 83px;
+  min-width: 83px;
   height: 119px;
   img {
-    width: 83px;
+    min-width: 83px;
     height: 119px;
     object-fit: cover;
   }
@@ -30,11 +30,18 @@ export const CardInfo = styled.p`
   letter-spacing: -0.36px;
   color: var(--black);
   margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 `
 
 export const CardInfoArea = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  padding: 0 10px 10px;
 `
 
 export const CardInfoTitle = styled.p`
