@@ -51,4 +51,9 @@ export const CardInfoTitle = styled.p`
   font-weight: 700;
   letter-spacing: -0.48px;
   color: var(--black);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 `
