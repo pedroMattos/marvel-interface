@@ -7,14 +7,14 @@ import { CardsAreaWrapper, CustomDivider, PaginatorArea } from "./SearchAndCards
 import PaginationSelector from "../../../components/PaginationSelector";
 
 export default function SearchAndCards() {
-  const { agents, isLoading, totalItems, handlePageChange } = useAgentData()
+  const { agents, isLoading, totalItems, handlePageChange, handleSearch } = useAgentData()
   const totalItemsPerPage = 10
   const totalPages = parseInt(totalItems / totalItemsPerPage)
   return (
     <PageInfo>
-      <SearchBar />
+      <SearchBar onChange={handleSearch} />
       <CardsAreaWrapper>
-        {!isLoading ? agents.map((agent) => (<AgentCard agentData={agent} />)) : <CircularProgress />}
+        {!isLoading ? agents.map((agent) => (<AgentCard key={agent.id} agentData={agent} />)) : <CircularProgress />}
       </CardsAreaWrapper>
       <PaginatorArea>
         <CustomDivider />
