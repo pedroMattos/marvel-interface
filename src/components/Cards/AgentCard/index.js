@@ -8,7 +8,7 @@ export default function AgentCard({ agentData }) {
       </CardThumb>
       <CardInfoArea>
         <CardInfoTitle>{agentData.name}</CardInfoTitle>
-        <CardInfo>{agentData.description}</CardInfo>
+        <CardInfo>{!!agentData.description.trim() ? agentData.description : 'Agente sem descrição' }</CardInfo>
       </CardInfoArea>
     </CardWrapper>
   )
