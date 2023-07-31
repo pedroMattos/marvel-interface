@@ -1,3 +1,4 @@
+import { ListItem } from "@mui/material";
 import { styled } from "styled-components";
 
 export const SidebarWrapper = styled.aside`
@@ -20,4 +21,36 @@ export const SidebarHeader = styled.div`
 
 export const SidebarBody = styled.div`
 
+`
+
+export const SidebarListItem = styled(ListItem)`
+  &.MuiListItem-root {
+    color: var(--black);
+    padding: 0 20px;
+    height: 34px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.39px;
+    svg path {
+      stroke: var(--black);
+    }
+    &.active-page {
+      svg path {
+        stroke: var(--orange-500);
+      }
+      .MuiButtonBase-root {
+        color: var(--orange-500);
+      }
+    }
+    .MuiButtonBase-root {
+      .MuiListItemIcon-root{
+        justify-content: center;
+      }
+      border-radius: 10px;
+      padding: 0;
+      &:hover {
+        background-color: var(--gray-background);
+      }
+    }
+  }
 `

@@ -1,8 +1,13 @@
-import { SidebarBody, SidebarHeader, SidebarWrapper } from "./Sidebar.styles";
+import { SidebarBody, SidebarHeader, SidebarListItem, SidebarWrapper } from "./Sidebar.styles";
 import Logo from '../../assets/images/logo_pontua_blue.png'
-import { Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import { Divider, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import MenuIcon from "../../components/Icons/MenuIcon";
+import UserIcon from "../../components/Icons/UserIcon";
+import BackArrowIcon from "../../components/Icons/BackArrowIcon";
+import { useResolvedPath } from "react-router-dom";
 
 export default function Sidebar() {
+  const { pathname } = useResolvedPath()
   return (
     <SidebarWrapper>
       <SidebarHeader>
@@ -10,30 +15,33 @@ export default function Sidebar() {
       </SidebarHeader>
       <SidebarBody>
         <List>
-          <ListItem disablePadding>
+          <SidebarListItem disablePadding className={pathname === '/' ? 'active-page' : ''}>
             <ListItemButton>
               <ListItemIcon>
+                <MenuIcon width={20} height={20} />
               </ListItemIcon>
               <ListItemText primary="Home" />
             </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
+          </SidebarListItem>
+          <SidebarListItem disablePadding className={pathname === '/profile' ? 'active-page' : ''}>
             <ListItemButton>
               <ListItemIcon>
+                <UserIcon width={20} height={20} />
               </ListItemIcon>
               <ListItemText primary="Perfil" />
             </ListItemButton>
-          </ListItem>
+          </SidebarListItem>
         </List>
         <Divider />
         <List>
-          <ListItem disablePadding>
+          <SidebarListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
+                <BackArrowIcon width={20} height={20} />
               </ListItemIcon>
               <ListItemText primary="Sair" />
             </ListItemButton>
-          </ListItem>
+          </SidebarListItem>
         </List>
       </SidebarBody>
     </SidebarWrapper>
