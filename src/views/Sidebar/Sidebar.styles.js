@@ -1,4 +1,4 @@
-import { ListItem } from "@mui/material";
+import { Divider, ListItem } from "@mui/material";
 import { styled } from "styled-components";
 
 export const SidebarWrapper = styled.aside`
@@ -21,6 +21,12 @@ export const SidebarHeader = styled.div`
 
 export const SidebarBody = styled.div`
 
+`
+
+export const CustomDivider = styled(Divider)`
+  &.MuiDivider-root {
+    border-color: var(--divider-color);
+  }
 `
 
 export const SidebarListItem = styled(ListItem)`

@@ -1,6 +1,6 @@
-import { SidebarBody, SidebarHeader, SidebarListItem, SidebarWrapper } from "./Sidebar.styles";
+import { CustomDivider, SidebarBody, SidebarHeader, SidebarListItem, SidebarWrapper } from "./Sidebar.styles";
 import Logo from '../../assets/images/logo_pontua_blue.png'
-import { Divider, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import { List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import MenuIcon from "../../components/Icons/MenuIcon";
 import UserIcon from "../../components/Icons/UserIcon";
 import BackArrowIcon from "../../components/Icons/BackArrowIcon";
@@ -32,7 +32,7 @@ export default function Sidebar() {
             </ListItemButton>
           </SidebarListItem>
         </List>
-        <Divider />
+        <CustomDivider />
         <List>
           <SidebarListItem disablePadding>
             <ListItemButton>
