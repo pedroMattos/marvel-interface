@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { FormTitle } from "../forms.styles";
+import { Box, Tabs } from "@mui/material";
 
 export const PageTitle = styled(FormTitle)`
   padding: 0;
@@ -35,4 +36,24 @@ export const ListItem = styled.li`
   font-weight: 600;
   line-height: 24px;
   color: var(--blue-200);
+`
+
+export const ListGroup = styled.ul`
+  margin: 0;
+  padding: 0;
+`
+
+export const CustomTabs = styled(Tabs)`
+.MuiButtonBase-root.MuiTab-root {
+    color: var(--gray-500);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+`
+
+export const TabBox = styled(Box)`
+  .MuiTabs-indicator {
+    background-color: var(--blue-800);
+  }
 `
