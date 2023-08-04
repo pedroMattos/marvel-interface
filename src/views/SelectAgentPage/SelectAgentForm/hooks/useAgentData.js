@@ -15,18 +15,23 @@ export default function useAgentData() {
   }
 
   const handleSearch = (event) => {
-    const isNotEmpty = !!event.target.value.trim()
     const searchTerm = event.target.value
+    const isNoEmpty = !!searchTerm.trim()
     const startSearch = debounce(() => {
-      if (isNotEmpty) reFetchAgents(pageOffset, searchTerm)
+      if (isNoEmpty) {
+        reFetchAgents(0, searchTerm, false)
+        return
+      }
+
+      reFetchAgents(pageOffset, searchTerm)
     }, 1000)
 
     startSearch()
   }
 
-  const reFetchAgents = async (offset, searchTerm) => {
+  const reFetchAgents = async (offset, searchTerm, changeOffset = true) => {
     const { results, total } = await getAllCharacters(offset, searchTerm)
-    setPageOffset(offset)
+    changeOffset && setPageOffset(offset)
     setAgents(results)
     setTotalItems(total)
     setIsLoading(false)
