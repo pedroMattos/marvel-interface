@@ -4,10 +4,11 @@ import { List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material"
 import MenuIcon from "../../components/Icons/MenuIcon";
 import UserIcon from "../../components/Icons/UserIcon";
 import BackArrowIcon from "../../components/Icons/BackArrowIcon";
-import { useResolvedPath } from "react-router-dom";
+import { useNavigate, useResolvedPath } from "react-router-dom";
 
 export default function Sidebar() {
   const { pathname } = useResolvedPath()
+  const navigate = useNavigate()
   return (
     <SidebarWrapper>
       <SidebarHeader>
@@ -16,14 +17,14 @@ export default function Sidebar() {
       <SidebarBody>
         <List>
           <SidebarListItem disablePadding className={pathname === '/' ? 'active-page' : ''}>
-            <ListItemButton>
+            <ListItemButton onClick={() => navigate('/')}>
               <ListItemIcon>
                 <MenuIcon width={20} height={20} />
               </ListItemIcon>
               <ListItemText primary="Home" />
             </ListItemButton>
           </SidebarListItem>
-          <SidebarListItem disablePadding className={pathname === '/profile' ? 'active-page' : ''}>
+          <SidebarListItem disablePadding className={pathname !== '/' ? 'active-page' : ''}>
             <ListItemButton>
               <ListItemIcon>
                 <UserIcon width={20} height={20} />
