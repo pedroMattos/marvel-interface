@@ -1,8 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import { CardInfo, CardInfoArea, CardInfoTitle, CardThumb, CardWrapper } from "./AgentCard.styles";
+import { connect } from "react-redux";
 
-export default function AgentCard({ agentData }) {
+function AgentCard({ agentData, dispatch }) {
+  const navigate = useNavigate()
+  const handleNavigate = () => {
+    dispatch({ type: 'UPDATE_DATA', payload: agentData })
+    navigate(`agent/${agentData.id}`)
+  }
+
   return (
-    <CardWrapper>
+    <CardWrapper onClick={handleNavigate}>
       <CardThumb>
         <img src={`${agentData.thumbnail.path}.${agentData.thumbnail.extension}`} alt={agentData.name} />
       </CardThumb>
@@ -13,3 +21,5 @@ export default function AgentCard({ agentData }) {
     </CardWrapper>
   )
 }
+
+export default connect()(AgentCard)
