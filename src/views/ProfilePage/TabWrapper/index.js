@@ -7,6 +7,7 @@ import { AgentName, Emptyheader, PageTitle, TabContainer, TitleWrapper } from ".
 import SpeciesTab from "../Tabs/SpeciesTab";
 import AuthorsTab from "../Tabs/AuthorsTab";
 import { PageInfo } from "../../views.styles";
+import AgentProfileCard from "../../../components/Cards/AgentProfileCard";
 
 export default function TabWrapper({ agentData }) {
   const [value, setValue] = useState(0)
@@ -40,7 +41,11 @@ export default function TabWrapper({ agentData }) {
           </Tabs>
         </Box>
         <GeneralTab value={value} index={0}>
-          Tab de visões gerais
+          <AgentProfileCard
+            agentDescription={agentData.description}
+            agentImage={`${agentData.thumbnail.path}.${agentData.thumbnail.extension}`}
+            agentName={agentData.name}
+          />
         </GeneralTab>
         <TeamsTab value={value} index={1}>
           Tab de times
