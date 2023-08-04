@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom"
 import { PageSection } from "../views.styles"
 import Sidebar from "../Sidebar"
 import TabWrapper from "./TabWrapper"
@@ -11,7 +10,6 @@ const mapStateToProps = (state) => {
 }
 
 function ProfilePage({ data }) {
-  const { id } = useParams()
 
   return (
     <PageSection>
