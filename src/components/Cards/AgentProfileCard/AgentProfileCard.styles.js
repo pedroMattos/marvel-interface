@@ -3,12 +3,13 @@ import { styled } from "styled-components";
 export const CardWrapper = styled.div`
   display: flex;
   width: 100%;
-  min-height: 200px;
+  min-height: fit-content;
   background-color: var(--white);
   box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.06);
   border-radius: 15px;
   margin-top: 30px;
   gap: 30px;
+  padding-bottom: 70px;
 `
 
 export const AgentImage = styled.img`

@@ -3,7 +3,7 @@ import { useState } from "react";
 import PowersTab from "../Tabs/PowersTab";
 import GeneralTab from "../Tabs/GeneralTab";
 import TeamsTab from "../Tabs/TeamsTab";
-import { AgentName, Emptyheader, PageTitle, TabContainer, TitleWrapper } from "../ProfilePage.styles";
+import { AgentName, Emptyheader, ListItem, PageTitle, TabContainer, TitleWrapper } from "../ProfilePage.styles";
 import SpeciesTab from "../Tabs/SpeciesTab";
 import AuthorsTab from "../Tabs/AuthorsTab";
 import { PageInfo } from "../../views.styles";
@@ -16,12 +16,12 @@ export default function TabWrapper({ agentData }) {
     return {
       id: `simple-tab-${index}`,
       'aria-controls': `simple-tabpanel-${index}`,
-    };
+    }
   }
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+    setValue(newValue)
+  }
 
   return (
     <PageInfo>
@@ -48,16 +48,38 @@ export default function TabWrapper({ agentData }) {
           />
         </GeneralTab>
         <TeamsTab value={value} index={1}>
-          Tab de times
+          <ul>
+            <ListItem>Avengers</ListItem>
+            <ListItem>Defenders</ListItem>
+            <ListItem>Fantastic Four</ListItem>
+            <ListItem>Future Foundation</ListItem>
+            <ListItem>Heroes for Hire</ListItem>
+            <ListItem>The New Avengers</ListItem>
+            <ListItem>X-Mansion</ListItem>
+          </ul>
         </TeamsTab>
         <PowersTab value={value} index={2}>
-          Tab de poderes
+          <ul>
+            <ListItem>Agility</ListItem>
+            <ListItem>Genius</ListItem>
+            <ListItem>Genius-level intellect</ListItem>
+            <ListItem>Precognitive</ListItem>
+            <ListItem>Precognitive spider-sense</ListItem>
+            <ListItem>Speed</ListItem>
+            <ListItem>Spider-sense</ListItem>
+            <ListItem>Superhuman strength</ListItem>
+          </ul>
         </PowersTab>
         <SpeciesTab value={value} index={3}>
-          Tab de Especies
+          <ul>
+            <ListItem>Mutate</ListItem>
+          </ul>
         </SpeciesTab>
         <AuthorsTab value={value} index={4}>
-          Tab de autores
+          <ul>
+            <ListItem>Stan Lee</ListItem>
+            <ListItem>Steve Ditko</ListItem>
+          </ul>
         </AuthorsTab>
       </TabContainer>
     </PageInfo>

@@ -29,3 +29,10 @@ export const Emptyheader = styled.div`
   width: 100%;
   border: 1px solid var(--divider-color);
 `
+
+export const ListItem = styled.li`
+  font-szie: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--blue-200);
+`
