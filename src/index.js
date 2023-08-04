@@ -11,13 +11,19 @@ import RecoverPage from './views/RecoverPage';
 import GoBackToLoginPage from './views/GoBackToLoginPage';
 import SelecAgent from './views/SelectAgentPage';
 import HomePage from './views/HomePage';
+import store from './store/index.js';
+import { PersistGate } from 'redux-persist/integration/react';
+import ProfilePage from './views/ProfilePage';
+import { Provider } from 'react-redux';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
     <React.StrictMode>
-      <HomePage />
+      <Provider store={store.store}>
+        <HomePage />
+      </Provider>
     </React.StrictMode>
     ),
   },
@@ -50,6 +56,18 @@ const router = createBrowserRouter([
     element: (
     <React.StrictMode>
       <SelecAgent />
+    </React.StrictMode>
+    ),
+  },
+  {
+    path: "/agent/:id",
+    element: (
+    <React.StrictMode>
+      <Provider store={store.store}>
+        <PersistGate loading={null} persistor={store.persistor}>
+          <ProfilePage />
+        </PersistGate>
+      </Provider>
     </React.StrictMode>
     ),
   },
