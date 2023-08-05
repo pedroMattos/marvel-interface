@@ -1,70 +1,154 @@
-# Getting Started with Create React App
+# *Teste Desenvolvimento Pontua Web*
+> Esse é o teste para desenvolvedores na Pontua Web.<br>
+> Sinta-se livre para editar a partir do título "Documentação da Aplicação".<br>
+> Essa aplicação deve ser criada com base e utilização na api fornecida pela Marvel 
+[https://developer.marvel.com/](https://developer.marvel.com/)<br>
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Qualquer dúvida poderá ser enviada por e-mail em tecnologia@pontua.com.br;<br>
+> O prazo para finalização do teste deverá ser fornecido pelo RH;<br>
+>***Não deixe de entregar sua aplicação*** mesmo que não esteja pronta ou perfeita;<br>
+> A entrega do código deverá ser feita no GitHub e após o término, notificar o time atráves do e-mail tecnologia@pontua.com.br e gente@pontua.com.br.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+>Link para layout no Figma: [layout]('https://www.figma.com/file/QFEzv3O4PWCzmvicy7e7sm/Teste-de-Desenvolvimento?node-id=0-1&t=D2fOR8TxhmRi52td-0')
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Página de Login
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+***Eu como usuário:***<br>
+> Irei inserir o meu e-mail e senha de acesso para navegar para a tela de Agentes.
 
-### `npm test`
+***Quando eu:***<br>
+> Clicar no botão entrar, se sucesso deverá navegar para a próxima tela, caso ocorra erro, ver uma notificação;<br> 
+> informando que o email ou senha está inválido.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### *Opcional*
+> Quando eu clicar deverá redirecionar para a tela de esqueci minha senha.
 
-### `npm run build`
+### *Critérios de aceite*
+>- Validação de e-mail e senha;
+>- Navegar para próxima página;
+>- Exibir mensagem de erro;
+>- Ser o mais fiel possível ao layout do Figma.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Página de seleção de Agente
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+***Eu como usuário:***<br>
+> Irei selecionar o agente de minha escolha para acessar a página de perfil do agente.
 
-### `npm run eject`
+***Quando eu:***<br>
+> Clicar no campo de escolha deverá ser exibido uma lista com os nomes e foto do perfil de cada agente,
+e ao clicar no botão entrar ser redirecionado para a tela de perfil do agente;
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### *Critérios de aceite*
+>- Se não houver agente selecionado mostrar o placeholder "Selecione um agente" conforme Figma;
+>- Se já exitir um agente selecionado e eu clicar no campo de escolha, exibir a lista de agentes com uma flag no agente; 
+>- já selecionado;
+>- Ao clicar no botão entrar deverá navegar para a página de perfil do agente selecionado;
+>- Ser o mais fiel possível ao layout do Figma.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Página de Perfil de Agente
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+***Eu como usuário:***<br>
+> Ao acessar a tela preciso ver a aba de visão geral com o descritivo sobre o agente, 
+bem como seu nome e imagem;<br>
+> Quero poder navegar nas abas de características, conforme layout do Figma;<br>
+> Preciso visualizar o menu com as opções de acessar a Home, Perfil e sair do sistema.
 
-## Learn More
+***Quando eu:***<br>
+> Clicar em uma das abas disponíveis daquele agente, preciso ver uma lista com as informações daquela aba.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### *Critérios de aceite*
+>- Exibir as informações dos agentes;
+>- As abas do perfil devem ser dinâmicas de acordo com cada agente;
+>- Ao clicar nas abas mostrar as listagens com as informações relativas;
+>- Exibir o menu lateral com link para Home, Perfil e Logout;
+>- Ser o mais fiel possível ao layout do Figma;
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Página Home
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+***Eu como usuário:***<br>
+> Desejo visualizar uma lista de cards com fotos de perfil e um resumo de personagens;<br>
+> Quero poder navegar na lista pela paginação no final da página;<br>
+> Quando eu clicar no campo de pesquisa e digitar o nome do agente, me mostre somente os personagens que contém aquele termo buscado.
 
-### Analyzing the Bundle Size
+***Quando eu:***<br>
+> Clicar no card do personagem, deverei ser redirecionado para a página de perfil do personagem escolhido;<br>
+> Fizer uma busca, o sistema deverá exibir na lista somente os personagens que contém aquele nome.<br>
+> Clicar no botão "Próxima" deverá exibir os próximos cards da lista (próxima página);<br>
+> Clicar no botão "Anterior" deverá exibir os cards anteriores da lista (página anterior);<br>
+> Quando eu clicar no botão com número de páginação, exibir os cards relativos aquela página selecionada.<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### *Critérios de aceite*
+>- Exibir resumo e foto de perfil;
+>- Listagem mínima de 11 personagens
+>- Exibição de no mínimo na primeira página
+>- Exibição de no máximo 10 personagens por página;
+>- Ao clicar em um card ser redirecionado à página de perfil do mesmo;
+>- Ser o mais fiel possível ao layout do Figma;
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+># *Opcional* *
+## Página Recuperação de Senha 
 
-### Advanced Configuration
+***Eu como usuário:***<br>
+> Irei inserir o email que realizei o cadastro na plataforma no campo disponivel e, clicarei no botão enviar link.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+***Quando eu:***<br>
+> Clicar no botão de enviar link, deverá aparecer a mensagem de envio com sucesso.
 
-### Deployment
+### *Critérios de aceite*
+>- Ser o mais fiel possível ao layout do Figma;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+# Documentação da Aplicação
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+>Você pode escrever a documentação da sua aplicação a partir daqui...
+> 
+
+
+---
+## Funcionalidades
+
+- Exibir heróis com paginação
+- Exibir perfil do herói
+- Buscar heróis pelo nome
+- Login
+- Logou
+- Selecionar herói que quer ver o perfil primeiro
+
+
+## Detalhes
+
+Aplicação simples que possui login com jwt em node. Listagem de personagens, paginação e exibição de perfil
+
+
+
+## Instalação front
+
+Na pasta raiz
+```bash
+    npm install; npm run start
+```
+
+## Instalação back
+
+Na pasta node para ser possível o login jwt
+```bash
+    npm install; node index.js
+```
+
+
+    
