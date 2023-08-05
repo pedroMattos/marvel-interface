@@ -43,7 +43,7 @@ function Sidebar({ data }) {
         <CustomDivider />
         <List>
           <SidebarListItem disablePadding>
-            <ListItemButton>
+            <ListItemButton onClick={() => navigate('/login')}>
               <ListItemIcon>
                 <BackArrowIcon width={20} height={20} />
               </ListItemIcon>
