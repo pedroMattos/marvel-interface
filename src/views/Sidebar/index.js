@@ -5,8 +5,15 @@ import MenuIcon from "../../components/Icons/MenuIcon";
 import UserIcon from "../../components/Icons/UserIcon";
 import BackArrowIcon from "../../components/Icons/BackArrowIcon";
 import { useNavigate, useResolvedPath } from "react-router-dom";
+import { connect } from "react-redux";
 
-export default function Sidebar() {
+const mapStateToProps = (state) => {
+  return {
+    data: state.data.defaultAgent,
+  };
+}
+
+function Sidebar({ data }) {
   const { pathname } = useResolvedPath()
   const navigate = useNavigate()
   return (
@@ -25,7 +32,7 @@ export default function Sidebar() {
             </ListItemButton>
           </SidebarListItem>
           <SidebarListItem disablePadding className={pathname !== '/' ? 'active-page' : ''}>
-            <ListItemButton>
+            <ListItemButton onClick={() => navigate(`/agent/${data.id}`)}>
               <ListItemIcon>
                 <UserIcon width={20} height={20} />
               </ListItemIcon>
@@ -48,3 +55,5 @@ export default function Sidebar() {
     </SidebarWrapper>
   )
 }
+
+export default connect(mapStateToProps)(Sidebar)
