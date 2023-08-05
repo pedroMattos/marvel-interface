@@ -5,6 +5,7 @@ import { PageInfo } from "../../views.styles";
 import SearchBar from "../SearchBar";
 import { CardsAreaWrapper, CustomDivider, PaginatorArea } from "./SearchAndCards.styles";
 import PaginationSelector from "../../../components/PaginationSelector";
+import Loading from "../../../components/Loading";
 
 export default function SearchAndCards() {
   const { agents, isLoading, totalItems, handlePageChange, handleSearch } = useAgentData()
@@ -14,7 +15,7 @@ export default function SearchAndCards() {
     <PageInfo>
       <SearchBar onChange={handleSearch} />
       <CardsAreaWrapper>
-        {!isLoading ? agents.map((agent) => (<AgentCard key={agent.id} agentData={agent} />)) : <CircularProgress />}
+        {!isLoading ? agents.map((agent) => (<AgentCard key={agent.id} agentData={agent} />)) : <Loading />}
       </CardsAreaWrapper>
       <PaginatorArea>
         <CustomDivider />
