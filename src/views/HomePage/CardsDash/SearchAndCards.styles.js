@@ -6,9 +6,9 @@ export const CardsAreaWrapper = styled.div`
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  min-height: 470px;
+  cursor: pointer;
 `
 
 export const PaginatorArea = styled.div`
