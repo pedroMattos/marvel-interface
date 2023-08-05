@@ -4,3 +4,9 @@ export const updateData = (data) => {
     payload: data,
   }
 }
+export const createDefaultAgent = (data) => {
+  return {
+    type: 'CREATE_DEFAULT',
+    payload: data,
+  }
+}
