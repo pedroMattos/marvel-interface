@@ -1,7 +1,7 @@
 import { CustomButton } from "./styles";
 
-export default function HomePageEnter({ onClick }) {
+export default function HomePageEnter({ onClick, disabled }) {
   return (
-    <CustomButton variant="contained" onClick={onClick}>Entrar</CustomButton>
+    <CustomButton disabled={disabled} variant="contained" onClick={onClick}>Entrar</CustomButton>
   )
 }

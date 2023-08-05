@@ -1,4 +1,4 @@
-import { IconButton } from "@mui/material";
+import { Alert, IconButton, Snackbar } from "@mui/material";
 import TextField from "../../../components/FormFields/TextField";
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
@@ -21,7 +21,6 @@ export default function LoginForm() {
   const handleClick = () => {
     login(email, password).then((loginResponse) => {
       if (!loginResponse.hasError) navigate('/select-agent')
-
       setError(loginResponse.error)
     })
   }
@@ -29,11 +28,21 @@ export default function LoginForm() {
   const handleChange = (event, setState) => setState(event.target.value)
   return (
     <FormContainer>
-      {error && <p>{error}</p>}
       <FormTitle $highLightText=".">Bem-vindo</FormTitle>
       <InfoTextForm>Informe as suas credenciais de acesso ao portal</InfoTextForm>
-      <TextField onChange={(event) => handleChange(event, setEmail)} placeholder={'Informe seu email'} type="email" endAdornment={'@'} />
-      <TextField onChange={(event) => handleChange(event, setPassword)} placeholder={'Informe sua senha'} type={showPassword ? 'text' : 'password'} endAdornment={
+      <TextField
+        error={Boolean(error)}
+        errorText={error}
+        onChange={(event) => handleChange(event, setEmail)}
+        placeholder={'Informe seu email'}
+        type="email" endAdornment={'@'} />
+      <TextField
+        error={Boolean(error)}
+        errorText={error}
+        onChange={(event) => handleChange(event, setPassword)}
+        placeholder={'Informe sua senha'}
+        type={showPassword ? 'text' : 'password'}
+        endAdornment={
       <IconButton
         aria-label="toggle password visibility"
         onClick={handleClickShowPassword}

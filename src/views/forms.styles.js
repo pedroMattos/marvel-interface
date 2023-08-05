@@ -11,7 +11,7 @@ export const FormContainer = styled.div`
   background-color: var(--white);
   border-radius: var(--border-radius);
   max-width: 380px;
-  max-height: 433px;
+  min-height: 433px;
 `
 
 export const FormTitle = styled.p`

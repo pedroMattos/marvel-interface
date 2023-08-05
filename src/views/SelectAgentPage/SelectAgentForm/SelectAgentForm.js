@@ -12,7 +12,7 @@ function SelectAgentForm({ dispatch }) {
   const [selectedAgent, setSelectedAgent] = useState(null)
 
   const handleSelectAgent = () => {
-    navigate('/')
+    navigate(`/agent/${selectedAgent.id}`)
     dispatch({ type: 'CREATE_DEFAULT_AGENT', payload: selectedAgent })
   }
   return (
@@ -22,7 +22,7 @@ function SelectAgentForm({ dispatch }) {
       Tenha a visão do seu agente
     </InfoTextForm>
     {!isLoading && <SelectWithThumb setSelectedAgent={setSelectedAgent} selectedAgent={selectedAgent} listData={agents} />}
-    <HomePageEnter onClick={handleSelectAgent} />
+    <HomePageEnter disabled={!selectedAgent} onClick={handleSelectAgent} />
   </FormContainer>
   )
 }
