@@ -1,13 +1,11 @@
 import { CustomItem, CustomSelect } from "./styles";
-import { useState } from "react";
 import CheckIcon from '@mui/icons-material/Check'
 import EmptyItem from "./EmptyItem";
 
-export default function SelectWithThumb({ hasThumb = true, listData = [] }) {
-  const [selected, setSelected] = useState(null)
-  const handleChangeSelected = (event) => setSelected(event.target.value)
+export default function SelectWithThumb({ hasThumb = true, listData = [], setSelectedAgent, selectedAgent }) {
+  const handleChangeSelected = (event) => setSelectedAgent(event.target.value)
   return (
-    <CustomSelect value={selected}
+    <CustomSelect value={selectedAgent}
       displayEmpty
       renderValue={(selected) => {
         console.log(selected)
@@ -28,7 +26,7 @@ export default function SelectWithThumb({ hasThumb = true, listData = [] }) {
           <CustomItem key={data.id} value={data}>
             <img src={`${data.thumbnail.path}.${data.thumbnail.extension}`} alt={data.name} />
             <p>{data.name}</p>
-            {selected?.id === data.id && <CheckIcon />}
+            {selectedAgent?.id === data.id && <CheckIcon />}
           </CustomItem>
         ))}
     </CustomSelect>
