@@ -22,7 +22,9 @@ const router = createBrowserRouter([
     element: (
     <React.StrictMode>
       <Provider store={store.store}>
+      <PersistGate loading={null} persistor={store.persistor}>
         <HomePage />
+      </PersistGate>
       </Provider>
     </React.StrictMode>
     ),
@@ -55,7 +57,9 @@ const router = createBrowserRouter([
     path: "/select-agent",
     element: (
     <React.StrictMode>
-      <SelecAgent />
+      <Provider store={store.store}>
+        <SelecAgent />
+      </Provider>
     </React.StrictMode>
     ),
   },
