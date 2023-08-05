@@ -1,22 +1,19 @@
 import { PageSection } from "../views.styles"
 import Sidebar from "../Sidebar"
 import TabWrapper from "./TabWrapper"
-import { connect } from "react-redux"
+import useProfileAgentData from "./hooks/useProfileAgentData"
+import Loading from "../../components/Loading"
 
-const mapStateToProps = (state) => {
-  return {
-    data: state.data.data,
-  };
-}
 
-function ProfilePage({ data }) {
+function ProfilePage() {
+  const { agent, isloading } = useProfileAgentData()
 
   return (
     <PageSection>
       <Sidebar />
-      <TabWrapper agentData={data} />
+      {!isloading ? <TabWrapper agentData={agent} /> : <Loading />}
     </PageSection>
   )
 }
 
-export default connect(mapStateToProps)(ProfilePage)
+export default ProfilePage
