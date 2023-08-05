@@ -126,7 +126,7 @@ bem como seu nome e imagem;<br>
 - Exibir perfil do herói
 - Buscar heróis pelo nome
 - Login
-- Logou
+- Logout
 - Selecionar herói que quer ver o perfil primeiro
 
 
